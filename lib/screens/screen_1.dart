@@ -27,9 +27,6 @@ class _Screen1State extends State<Screen1> {
       body: Consumer<TodoProvider>(
         builder: (context, providerContext, child) {
           List<Todo> todos = providerContext.getTodo();
-          // todos.forEach((e){
-          //   print(e.isCompleted);
-          // });
           return ListView.builder(
             itemCount: todos.length,
             itemBuilder: (context, index) {
@@ -40,7 +37,7 @@ class _Screen1State extends State<Screen1> {
                     comp = value!;
                     setState(() {
                       context.read<TodoProvider>().updateisCompleted(
-                        completed: value!,
+                        completed: value,
                         id: todos[index].id,
                       );
                     });

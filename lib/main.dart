@@ -5,7 +5,10 @@ import 'package:todo_with_api/screens/screen_1.dart';
 
 void main() {
   runApp(
-    ChangeNotifierProvider(create: (_) => TodoProvider(), child: const MyApp()),
+    ChangeNotifierProvider(
+      create: (context) => TodoProvider(),
+      child: const MyApp(),
+    ),
   );
   print("The app has started");
 }
